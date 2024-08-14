@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7bf2f8ae-f1db-43c6-ab95-b898873d6cda" name="Changes" comment="로그인 멤버별 장바구니 전체 개수 확인하는 메서드 → 헤더에 표시될 것&#10;&#10;  - 멤버별 장바구니 개수 조회&#10;    - CartRepository/count 메서드 작성&#10;      → 서비스 수정&#10;      &#10;findById 메소드들 → findOne 으로 이름 바꾸기&#10;&#10;template/frame&#10;  - header.html 생성&#10;  - footer.html 생성&#10;  - 활용 예시: shop.html">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/ProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/controller/HtmlTestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/controller/itemQnaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/ItemQna.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/ItemRatings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Like.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/DeliveryStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/ItemQnaStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/PayStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/domain/enums/Status.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/cartdto/CartAddDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/cartdto/CartResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/cartdto/CartUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/deliverydto/DeliveryDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/itemqnadto/ItemQnaAnswerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/itemqnadto/ItemQnaCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/itemqnadto/ItemQnaResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/itemqnadto/ItemQnaUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/orderdto/OrderCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/orderdto/OrderItemDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/orderdto/OrderResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/dto/orderdto/OrderSearchDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/repository/CartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/repository/ItemQnaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/repository/ItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/service/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/service/ItemQnaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ypjs/project/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/slick-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/slick-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/slick.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/templatemo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/templatemo.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/about-hero.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/banner_img_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/banner_img_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/banner_img_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/brand_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/brand_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/brand_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/brand_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/category_img_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/category_img_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/category_img_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/feature_prod_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/feature_prod_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/feature_prod_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product_single_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/shop_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery-migrate-1.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/templatemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/templatemo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/slick.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/slick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/slick.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/webfonts/slick.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/frame/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/frame/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/orderFormTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ypjs/project/ProjectApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ypjs/project/service/CartServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ypjs/project/service/ItemQnaServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ypjs/project/service/OrderServiceTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="project" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eh-ong&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GogiDosirak/YPJS.git&quot;,
+    &quot;accountId&quot;: &quot;c256880e-2601-4e66-879e-e74eda16f2da&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2hRqnusLzQxEi1QXP4fmuefBb8x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProjectApplication.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.ij_workspace [:ProjectApplication.main()].executor": "Run",
+    "JUnit.CartServiceTest.장바구니개수조회.executor": "Run",
+    "JUnit.ItemQnaServiceTest.executor": "Run",
+    "JUnit.ItemQnaServiceTest.상품문의등록.executor": "Run",
+    "JUnit.OrderServiceTest.executor": "Run",
+    "JUnit.OrderServiceTest.주문내역조회.executor": "Run",
+    "JUnit.ProjectApplicationTests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dev/workspace/ij_workspace/project_0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates" />
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates\frame" />
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\static" />
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates\order" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates\order" />
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates\order\order" />
+      <recent name="C:\Dev\workspace\ij_workspace\src\main\resources\templates" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ypjs.project.service" />
+      <recent name="ypjs.project.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ypjs.project.dto" />
+      <recent name="ypjs.project.repository" />
+      <recent name="ypjs.project.dto.request" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CartServiceTest.장바구니개수조회">
+    <configuration name="ProjectApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ypjs.project.ProjectApplication" />
+      <module name="project.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ypjs.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceTest.장바구니개수조회" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ypjs.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ypjs.project.service" />
+      <option name="MAIN_CLASS_NAME" value="ypjs.project.service.CartServiceTest" />
+      <option name="METHOD_NAME" value="장바구니개수조회" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemQnaServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ypjs.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ypjs.project.service" />
+      <option name="MAIN_CLASS_NAME" value="ypjs.project.service.ItemQnaServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemQnaServiceTest.상품문의등록" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ypjs.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ypjs.project.service" />
+      <option name="MAIN_CLASS_NAME" value="ypjs.project.service.ItemQnaServiceTest" />
+      <option name="METHOD_NAME" value="상품문의등록" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceTest.주문내역조회" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ypjs.project.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ypjs.project.service" />
+      <option name="MAIN_CLASS_NAME" value="ypjs.project.service.OrderServiceTest" />
+      <option name="METHOD_NAME" value="주문내역조회" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CartServiceTest.장바구니개수조회" />
+        <item itemvalue="Application.ProjectApplication" />
+        <item itemvalue="JUnit.OrderServiceTest.주문내역조회" />
+        <item itemvalue="JUnit.ItemQnaServiceTest.상품문의등록" />
+        <item itemvalue="JUnit.ItemQnaServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bf2f8ae-f1db-43c6-ab95-b898873d6cda" name="Changes" comment="" />
+      <created>1717567409114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717567409114</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Entity id 데이터 타입 변경 int -&gt; Long&#10;enum, controller, service, repository, dto(request, response) 패키지 생성&#10;&#10;Order.java&#10; - 연관관계(Delivery, OrderItem) 메서드 작성&#10; - 생성,취소 메서드 작성&#10; - 관련 Dto 작성중">
+      <option name="closed" value="true" />
+      <created>1717595405426</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717595405426</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Entity&#10; - 필드명 전체적으로 중복내용 없도록 수정&#10; - Cart(상품수량수정 메서드 추가)&#10;&#10;Repository&#10; - CartRepository(생성, 단일조회, 조건부조회, 삭제)&#10; - OrderRepository(생성, 단일조회, 조건부조회)&#10;&#10;Service&#10; - CartService&#10; - OrderService&#10;&#10;Controller&#10; - CartController&#10; - OrderController&#10; &#10; Dto&#10;  - CartAddDto(장바구니추가용)&#10;  - CartUpdateDto(장바구니상품수량수정용)&#10;  - DeliveryDto(배송정보용)&#10;  - OrderCreateDto(주문생성용)&#10;  - OrderItemDto(주문상품정보용)&#10;  - OrderSearchDto(주문검색조건용)">
+      <option name="closed" value="true" />
+      <created>1717701989765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717701989765</updated>
+    </task>
+    <task id="LOCAL-00003" summary="부트스트랩 탬플릿 파일 추가&#10;&#10;장바구니, 주문, 상품문의">
+      <option name="closed" value="true" />
+      <created>1718199489068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718199489068</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- 주문 멤버별 전체 조회 기능&#10;  - 정렬 조건 추가&#10;    - OrderRepository/findAllByMemberId : jpql 수정&#10;  - 페이징 기능 추가&#10;    - OrderRepository/findAllByMemberId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;       → OrderServiceTest 주문내역조회 테스트 완료&#10;            &#10;- 상품 문의 전체 조회 기능&#10;  - 페이징 기능 추가&#10;    - ItemQnaRepository/findAllByItemId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;    - ItemQnaRepository/findAllByMemberId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;- OrderStatus 수정&#10;    - 주문완료, 배송준비중, 배송중, 배송완료, 주문취소">
+      <option name="closed" value="true" />
+      <created>1718294325204</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718294325204</updated>
+    </task>
+    <task id="LOCAL-00005" summary="로그인 멤버별 장바구니 전체 개수 확인하는 메서드 → 헤더에 표시될 것&#10;&#10;  - 멤버별 장바구니 개수 조회&#10;    - CartRepository/count 메서드 작성&#10;      → 서비스 수정&#10;      &#10;findById 메소드들 → findOne 으로 이름 바꾸기&#10;&#10;template/frame&#10;  - header.html 생성&#10;  - footer.html 생성&#10;  - 활용 예시: shop.html">
+      <option name="closed" value="true" />
+      <created>1718389040061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718389040061</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Entity id 데이터 타입 변경 int -&gt; Long&#10;enum, controller, service, repository, dto(request, response) 패키지 생성&#10;&#10;Order.java&#10; - 연관관계(Delivery, OrderItem) 메서드 작성&#10; - 생성,취소 메서드 작성&#10; - 관련 Dto 작성중" />
+    <MESSAGE value="Entity&#10; - 필드명 전체적으로 중복내용 없도록 수정&#10; - Cart(상품수량수정 메서드 추가)&#10;&#10;Repository&#10; - CartRepository(생성, 단일조회, 조건부조회, 삭제)&#10; - OrderRepository(생성, 단일조회, 조건부조회)&#10;&#10;Service&#10; - CartService&#10; - OrderService&#10;&#10;Controller&#10; - CartController&#10; - OrderController&#10; &#10; Dto&#10;  - CartAddDto(장바구니추가용)&#10;  - CartUpdateDto(장바구니상품수량수정용)&#10;  - DeliveryDto(배송정보용)&#10;  - OrderCreateDto(주문생성용)&#10;  - OrderItemDto(주문상품정보용)&#10;  - OrderSearchDto(주문검색조건용)" />
+    <MESSAGE value="부트스트랩 탬플릿 파일 추가&#10;&#10;장바구니, 주문, 상품문의" />
+    <MESSAGE value="- 주문 멤버별 전체 조회 기능&#10;  - 정렬 조건 추가&#10;    - OrderRepository/findAllByMemberId : jpql 수정&#10;  - 페이징 기능 추가&#10;    - OrderRepository/findAllByMemberId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;       → OrderServiceTest 주문내역조회 테스트 완료&#10;            &#10;- 상품 문의 전체 조회 기능&#10;  - 페이징 기능 추가&#10;    - ItemQnaRepository/findAllByItemId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;    - ItemQnaRepository/findAllByMemberId: 페이징 코드 추가&#10;       → 컨트롤러 및 서비스 내 연관 메서드 수정&#10;- OrderStatus 수정&#10;    - 주문완료, 배송준비중, 배송중, 배송완료, 주문취소" />
+    <MESSAGE value="로그인 멤버별 장바구니 전체 개수 확인하는 메서드 → 헤더에 표시될 것&#10;&#10;  - 멤버별 장바구니 개수 조회&#10;    - CartRepository/count 메서드 작성&#10;      → 서비스 수정&#10;      &#10;findById 메소드들 → findOne 으로 이름 바꾸기&#10;&#10;template/frame&#10;  - header.html 생성&#10;  - footer.html 생성&#10;  - 활용 예시: shop.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인 멤버별 장바구니 전체 개수 확인하는 메서드 → 헤더에 표시될 것&#10;&#10;  - 멤버별 장바구니 개수 조회&#10;    - CartRepository/count 메서드 작성&#10;      → 서비스 수정&#10;      &#10;findById 메소드들 → findOne 으로 이름 바꾸기&#10;&#10;template/frame&#10;  - header.html 생성&#10;  - footer.html 생성&#10;  - 활용 예시: shop.html" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.thymeleaf.exceptions.TemplateProcessingException" package="org.thymeleaf.exceptions" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

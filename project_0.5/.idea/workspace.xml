@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="808988f6-66ca-4faf-8c45-59d44000873a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/ProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/controller/HtmlTestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/controller/itemQnaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/ItemQna.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/ItemRatings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Like.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/DeliveryStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/ItemQnaStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/PayStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/domain/enums/Status.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/cartdto/CartAddDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/cartdto/CartResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/cartdto/CartUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/deliverydto/DeliveryDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/itemqnadto/ItemQnaAnswerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/itemqnadto/ItemQnaCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/itemqnadto/ItemQnaResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/itemqnadto/ItemQnaUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/orderdto/OrderCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/orderdto/OrderItemDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/orderdto/OrderResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/dto/orderdto/OrderSearchDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/repository/CartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/repository/ItemQnaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/repository/ItemRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/repository/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/service/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/service/ItemQnaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/ypjs/project/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/fontawesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/slick-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/slick-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/slick.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/templatemo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/css/templatemo.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/about-hero.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/banner_img_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/banner_img_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/banner_img_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/brand_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/brand_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/brand_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/brand_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/category_img_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/category_img_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/category_img_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/feature_prod_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/feature_prod_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/feature_prod_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/product_single_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/img/shop_11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/jquery-migrate-1.2.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/slick.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/templatemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/js/templatemo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/slick.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/slick.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/slick.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/static/webfonts/slick.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/frame/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/frame/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/hello.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/order/orderFormTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/shop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/ypjs/project/ProjectApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/ypjs/project/service/CartServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/ypjs/project/service/ItemQnaServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/ypjs/project/service/OrderServiceTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2kdnKhPR4dedjIn6cI16O7Bqvkg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dev/workspace/ij_workspace/project_0.5/YPJS-realdevelop"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="808988f6-66ca-4faf-8c45-59d44000873a" name="Changes" comment="" />
+      <created>1723622259566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723622259566</updated>
+    </task>
+    <servers />
+  </component>
+</project>

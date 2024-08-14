@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="frame/header :: head">
+    <title>Zay Shop - Product Listing Page</title>
+</head>
+
+<body>
+<!--header-->
+<header th:replace="frame/header :: header"></header>
+
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <br>
+                <h1 class="h1">인기 카테고리</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="/ypjs/categoryItem/get/4"><img src="./img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Women's Top</h5>
+                <p class="text-center"><a class="btn btn-success" href="/ypjs/categoryItem/get/4">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="/ypjs/categoryItem/get/5"><img src="./img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Women's Bottom</h2>
+                <p class="text-center"><a class="btn btn-success" href="/ypjs/categoryItem/get/5">Go Shop</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="/ypjs/categoryItem/get/7"><img src="./img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Men's Top</h2>
+                <p class="text-center"><a class="btn btn-success" href="/ypjs/categoryItem/get/7">Go Shop</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
+
+
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <br>
+                    <h1 class="h1">인기 상품</h1>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="/ypjs/item/get/1">
+                            <img src="./img/feature_prod_01.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">24,000원</li>
+                            </ul>
+                            <a href="/ypjs/item/get/1" class="h2 text-decoration-none text-dark">[스투시]심플 화이트 티셔츠</a>
+                            <p class="card-text">
+                                미니멀한 로고가 돋보이는 깔끔하고 심플한 화이트 티셔츠. 어떤 룩에도 잘 어울립니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="/ypjs/item/get/2">
+                            <img src="./img/feature_prod_02.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">48,000원</li>
+                            </ul>
+                            <a href="/ypjs/item/get/2" class="h2 text-decoration-none text-dark">겨울 그레이 패딩</a>
+                            <p class="card-text">
+                                가볍고 보온력이 좋은 숏 패딩.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="/ypjs/item/get/3">
+                            <img src="./img/feature_prod_03.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">36,000원</li>
+                            </ul>
+                            <a href="/ypjs/item/get/3" class="h2 text-decoration-none text-dark">블루 컬러 포인트 티</a>
+                            <p class="card-text">
+                                목과 소매 라인에 블루 컬러 포인트가 돋보이는 티.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Product -->
+
+
+<footer th:replace="frame/footer :: footer"></footer>
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>
