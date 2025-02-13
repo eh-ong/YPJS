@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ypjs.project.dto.paymentdto.PaymentCallbackRequest;
 import ypjs.project.dto.paymentdto.PaymentDto;
-import ypjs.project.dto.paymentdto.UpdatePointsRequest;
+import ypjs.project.dto.paymentdto.UpdatePointsRequestDto;
 import ypjs.project.service.CartService;
 import ypjs.project.service.MemberService;
 import ypjs.project.service.PaymentService;
@@ -100,7 +100,7 @@ public class PaymentApiController {
 
     //payment 포인트 사용 함수
     @PostMapping("/updateMemberPoints")
-    public ResponseEntity<String> updateMemberPoints(@RequestBody UpdatePointsRequest request) {
+    public ResponseEntity<String> updateMemberPoints(@RequestBody UpdatePointsRequestDto request) {
 
         // 회원 포인트 업데이트 서비스 호출
         boolean updated = memberService.updateMemberPoints(request);

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdatePointsRequest {
+public class UpdatePointsRequestDto {
         private Long memberId;
         private int usedPoints;
 }

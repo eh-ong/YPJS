@@ -6,7 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ypjs.project.domain.Member;
-import ypjs.project.dto.paymentdto.UpdatePointsRequest;
+import ypjs.project.dto.paymentdto.UpdatePointsRequestDto;
 import ypjs.project.dto.memberdto.MemberDto;
 import ypjs.project.repository.MemberRepository;
 
@@ -117,7 +117,7 @@ public class MemberService {
 
     //payment 포인트 업데이트 관련 로직
     @Transactional
-    public boolean updateMemberPoints(UpdatePointsRequest request) {
+    public boolean updateMemberPoints(UpdatePointsRequestDto request) {
 
             Long memberId = request.getMemberId();
             int usedPoints = request.getUsedPoints();
