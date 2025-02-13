@@ -34,7 +34,7 @@ public class CategoryService {
     //category등록
     @Transactional
     public Category saveCategory(CategoryRequestDto categoryRequestDto) {
-        Category parentCategory = categoryRepository.findOneCategory(categoryRequestDto.getParent());
+        Category parentCategory = categoryRepository.findOneCategory(categoryRequestDto.getParentId());
 
         Category category = new Category(
                 parentCategory,

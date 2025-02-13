@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ypjs.project.dto.paymentdto.PaymentCallbackRequest;
+import ypjs.project.dto.paymentdto.PaymentCallbackRequestDto;
 import ypjs.project.dto.paymentdto.PaymentDto;
 import ypjs.project.dto.paymentdto.UpdatePointsRequestDto;
 import ypjs.project.service.CartService;
@@ -35,14 +35,14 @@ public class PaymentApiController {
     //결제성공//결제요청은 OrderController create-> order.js
     //응답 엔티티
     @PostMapping("/payment")
-    public ResponseEntity<Map<String, Object>> validationPayment(@RequestBody PaymentCallbackRequest paymentCallbackRequest, HttpServletRequest request) throws Exception {
-        IamportResponse<Payment> iamportResponse = paymentService.paymentByCallback(paymentCallbackRequest);
+    public ResponseEntity<Map<String, Object>> validationPayment(@RequestBody PaymentCallbackRequestDto paymentCallbackRequestDto, HttpServletRequest request) throws Exception {
+        IamportResponse<Payment> iamportResponse = paymentService.paymentByCallback(paymentCallbackRequestDto);
 
         log.info("결제 응답={}", iamportResponse.getResponse().toString());
 
         HttpSession session = request.getSession();
         // 결제 성공 시 세션에 paymentUid 저장
-        session.setAttribute("paymentUid", paymentCallbackRequest.getPaymentUid());
+        session.setAttribute("paymentUid", paymentCallbackRequestDto.getPaymentUid());
 
         // 결제 성공 시 세션에 cart가 있는지 확인 후 삭제
         // 세션에서 cartIds 가져오기

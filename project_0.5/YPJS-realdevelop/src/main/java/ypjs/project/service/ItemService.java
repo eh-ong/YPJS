@@ -50,10 +50,10 @@ public class ItemService {
         Item item = new Item(
                 category,
                 member,
-                itemRequestDto.getItemName(),
-                itemRequestDto.getItemContent(),
-                itemRequestDto.getItemPrice(),
-                itemRequestDto.getItemStock());
+                itemRequestDto.getName(),
+                itemRequestDto.getContent(),
+                itemRequestDto.getPrice(),
+                itemRequestDto.getStock());
 
         // ItemFileDto에 파일 정보 설정 (필드에 직접 접근하는 방법)
         itemFileDto.fileName = fileName;
@@ -110,10 +110,10 @@ public class ItemService {
 
 
         findItem.change(category,
-                itemUpdateDto.getItemName(),
-                itemUpdateDto.getItemContent(),
-                itemUpdateDto.getItemPrice(),
-                itemUpdateDto.getItemStock());
+                itemUpdateDto.getName(),
+                itemUpdateDto.getContent(),
+                itemUpdateDto.getPrice(),
+                itemUpdateDto.getStock());
 
 
 

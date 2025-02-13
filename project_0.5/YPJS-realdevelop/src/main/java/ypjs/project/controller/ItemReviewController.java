@@ -155,8 +155,8 @@ public class ItemReviewController {
         ItemReviewDto itemReview = new ItemReviewDto(
                 findItemReview.getItem().getItemId(),
                 findItemReview.getItemReviewId(),
-                findItemReview.getItemScore(),
-                findItemReview.getName(),
+                findItemReview.getScore(),
+                findItemReview.getTitle(),
                 findItemReview.getContent()
 
         );

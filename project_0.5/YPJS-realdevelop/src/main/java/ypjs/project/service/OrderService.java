@@ -47,8 +47,8 @@ public class OrderService {
             orderItems.add(
                     OrderItem.create(
                             itemRepository.findOne(oid.getItemId()),
-                            oid.getItemCount(),
-                            oid.getItemPrice()
+                            oid.getCount(),
+                            oid.getPrice()
                     )
             );
         }

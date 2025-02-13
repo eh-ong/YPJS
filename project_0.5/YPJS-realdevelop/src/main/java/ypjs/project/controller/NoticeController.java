@@ -41,8 +41,8 @@ public class NoticeController {
         Pageable pageable = PageRequest.of(page, size);
         List<Notice> noticeList = noticeService.findAll(pageable);
         List<NoticeDto.NoticeApiDto> result = noticeList.stream()
-                .map(n -> new NoticeDto.NoticeApiDto(n.getNoticeId(), n.getNoticeTitle(), n.getNoticeContent(),
-                        n.getNoticeCnt(), n.getNoticeDate(), n.getMember().getNickname()))
+                .map(n -> new NoticeDto.NoticeApiDto(n.getNoticeId(), n.getTitle(), n.getContent(),
+                        n.getCnt(), n.getDate(), n.getMember().getNickname()))
                 .collect(Collectors.toList());
         int totalPages = Page.totalPages(noticeService.countAll(), size);
 
@@ -58,8 +58,8 @@ public class NoticeController {
     public String findOne(@PathVariable("noticeId") Long noticeId, Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         Notice notice = noticeService.findOne(noticeId);
         cntUp(noticeId, request, response);
-        NoticeDto.NoticeApiDto result = new NoticeDto.NoticeApiDto(notice.getNoticeId(),notice.getNoticeTitle(),notice.getNoticeContent(),
-                notice.getNoticeCnt(),notice.getNoticeDate(),notice.getMember().getName());
+        NoticeDto.NoticeApiDto result = new NoticeDto.NoticeApiDto(notice.getNoticeId(),notice.getTitle(),notice.getContent(),
+                notice.getCnt(),notice.getDate(),notice.getMember().getName());
         LoginDto.ResponseLogin member = (LoginDto.ResponseLogin)session.getAttribute("member");
         if (member != null) {
             System.out.println("Member Role: " + member.getRole()); // 콘솔 로그 확인
@@ -72,8 +72,8 @@ public class NoticeController {
     @GetMapping("/ypjs/board/notice/update/{noticeId}")
     public String update(@PathVariable("noticeId") Long noticeId, Model model) {
         Notice notice = noticeService.findOne(noticeId);
-        NoticeDto.NoticeApiDto result = new NoticeDto.NoticeApiDto(notice.getNoticeId(),notice.getNoticeTitle(),notice.getNoticeContent(),
-                notice.getNoticeCnt(),notice.getNoticeDate(),notice.getMember().getName());
+        NoticeDto.NoticeApiDto result = new NoticeDto.NoticeApiDto(notice.getNoticeId(),notice.getTitle(),notice.getContent(),
+                notice.getCnt(),notice.getDate(),notice.getMember().getName());
         model.addAttribute("notice",result);
         return "/board/notice/update";
     }

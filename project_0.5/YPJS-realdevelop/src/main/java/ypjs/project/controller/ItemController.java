@@ -198,10 +198,10 @@ public class ItemController {
         ItemUpdateDto item =  new ItemUpdateDto(
                 findItem.getItemId(),
                 findItem.getCategory().getCategoryId(),
-                findItem.getItemName(),
-                findItem.getItemContent(),
-                findItem.getItemPrice(),
-                findItem.getItemStock());
+                findItem.getName(),
+                findItem.getContent(),
+                findItem.getPrice(),
+                findItem.getStock());
 
         model.addAttribute("item", item);
 

@@ -66,7 +66,7 @@ $(document).ready(function() {
         // delivery 정보
         var deliveryCreateDto = {
             receiver: $('#receiver').text(),
-            phoneNumber: $('#phoneNumber').text(),
+            phone: $('#phoneNumber').text(),
             address: {
                 zipcode: $('#zipcode').text(),
                 address: $('#address').text(),
@@ -83,8 +83,8 @@ $(document).ready(function() {
 
             var orderItemRequestDto = {
                 itemId: itemId,
-                itemCount: itemCount,
-                itemPrice: itemPrice
+                count: itemCount,
+                price: itemPrice
             };
             orderItemRequestDtos.push(orderItemRequestDto);
         });

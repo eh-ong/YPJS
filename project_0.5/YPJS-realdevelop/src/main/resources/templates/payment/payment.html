@@ -30,8 +30,8 @@
                                 <span class="h5">주문 번호:</span>
                             </div>
                             <div class="col-8">
-                                <span id="orderId" th:text="${requestPayDto.orderId}"></span>
-                                <span hidden="hidden" id="orderUid" th:text="${requestPayDto.orderUid}"></span>
+                                <span id="orderId" th:text="${paymentRequestDto.orderId}"></span>
+                                <span hidden="hidden" id="orderUid" th:text="${paymentRequestDto.orderUid}"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -39,7 +39,7 @@
                                 <span class="h5">구매자 이름:</span>
                             </div>
                             <div class="col-8">
-                                <span id="payName" th:text="${requestPayDto.payName}"></span>
+                                <span id="payName" th:text="${paymentRequestDto.name}"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -47,7 +47,7 @@
                                 <span class="h5">전화번호:</span>
                             </div>
                             <div class="col-8">
-                                <span id="buyerTel" th:text="${requestPayDto.phoneNumber}"></span>
+                                <span id="buyerTel" th:text="${paymentRequestDto.phone}"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -55,7 +55,7 @@
                                 <span class="h5">주문자 아이디:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.memberId}" id="buyerMemberId"></span>
+                                <span th:text="${paymentRequestDto.memberId}" id="buyerMemberId"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -63,7 +63,7 @@
                                 <span class="h5">상품 이름:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.itemName}" id="itemName"></span>
+                                <span th:text="${paymentRequestDto.itemName}" id="itemName"></span>
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@
                                 <span class="h5">구매자 이메일:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.payEmail}" id="payEmail"></span>
+                                <span th:text="${paymentRequestDto.email}" id="payEmail"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -80,7 +80,7 @@
                                 <span class="h5">배송 주소:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.deliveryAddress}" id="deliveryAddress"></span>
+                                <span th:text="${paymentRequestDto.deliveryAddress}" id="deliveryAddress"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -88,7 +88,7 @@
                                 <span class="h5">우편번호:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.zipcode}" id="buyerPostcode"></span>
+                                <span th:text="${paymentRequestDto.zipcode}" id="buyerPostcode"></span>
                             </div>
                         </div>
                     </li>
@@ -108,7 +108,7 @@
                                 <span class="h5">보유한 포인트: </span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.point}" id="availablePoints"></span>
+                                <span th:text="${paymentRequestDto.point}" id="availablePoints"></span>
                             </div>
                         </div>
                         <div class="col-10 mx-auto">
@@ -135,7 +135,7 @@
                                 <span class="h5">상품 금액:</span>
                             </div>
                             <div class="col-8">
-                                <span th:text="${requestPayDto.orderPrice}" id="orderPrice"></span> 원
+                                <span th:text="${paymentRequestDto.orderPrice}" id="orderPrice"></span> 원
                             </div>
                         </div>
                         <div class="row">
@@ -151,7 +151,7 @@
                                 <span class="h4">총 결제 금액:</span>
                             </div>
                             <div class="col-8">
-                                <h3><span id="finalPaymentAmount" th:text="${requestPayDto.orderPrice}"></span> 원</h3>
+                                <h3><span id="finalPaymentAmount" th:text="${paymentRequestDto.orderPrice}"></span> 원</h3>
                             </div>
                         </div>
                     </li>

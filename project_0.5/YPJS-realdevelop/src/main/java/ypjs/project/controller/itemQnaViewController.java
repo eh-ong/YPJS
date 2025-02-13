@@ -51,7 +51,7 @@ public class itemQnaViewController {
         Item i = itemService.findOneItem(itemId);
 
         model.addAttribute("itemId", itemId);
-        model.addAttribute("itemName", i.getItemName());
+        model.addAttribute("itemName", i.getName());
         return "itemqna/create";
     }
 

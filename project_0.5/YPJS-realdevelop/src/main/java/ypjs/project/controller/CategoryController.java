@@ -88,8 +88,8 @@ public class CategoryController {
         Category findCategory = categoryService.findOneCategory(categoryId);
 
         CategoryUpdateDto category = new CategoryUpdateDto(
-                findCategory.getId(),
-                findCategory.getParent().getId(),
+                findCategory.getCategoryId(),
+                findCategory.getParent().getCategoryId(),
                 findCategory.getName());
 
         model.addAttribute("category", category);

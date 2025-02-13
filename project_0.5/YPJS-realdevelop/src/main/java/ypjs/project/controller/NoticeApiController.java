@@ -27,7 +27,7 @@ public class NoticeApiController {
     @PostMapping("/api/ypjs/board/notice/insert")
     public NoticeDto.CreateNoticeResponse insertNotice(HttpSession session, @RequestBody @Valid NoticeDto.CreateNoticeRequest createNoticeRequest) {
         Notice notice = noticeService.insertNotice(session, createNoticeRequest);
-        return new NoticeDto.CreateNoticeResponse(notice.getNoticeTitle());
+        return new NoticeDto.CreateNoticeResponse(notice.getTitle());
     }
 
 
@@ -35,7 +35,7 @@ public class NoticeApiController {
     public NoticeDto.UpdateNoticeResponse updateNotice(@PathVariable("noticeId") Long noticeId,
                                                        @RequestBody @Valid NoticeDto.UpdateNoticeRequest updateNoticeRequest) {
         noticeService.updateNotice(updateNoticeRequest, noticeId);
-        return new NoticeDto.UpdateNoticeResponse(updateNoticeRequest.getNoticeTitle());
+        return new NoticeDto.UpdateNoticeResponse(updateNoticeRequest.getTitle());
     }
 
 

@@ -165,7 +165,7 @@ public class OrderRepository {
         }
 
         //주문 상태 검색
-        if(orderSearchDto.getSearchOrderStatus() != null) {
+        if(orderSearchDto.getOrderStatus() != null) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -176,7 +176,7 @@ public class OrderRepository {
         }
 
         //배송 상태 검색
-        if(orderSearchDto.getSearchDeliveryStatus() != null) {
+        if(orderSearchDto.getDeliveryStatus() != null) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -187,7 +187,7 @@ public class OrderRepository {
         }
 
         //주문 번호 검색
-        if(orderSearchDto.getSearchOrderId() != null) {
+        if(orderSearchDto.getOrderId() != null) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -198,7 +198,7 @@ public class OrderRepository {
         }
 
         //주문 고객ID 검색
-        if(StringUtils.hasText(orderSearchDto.getSearchMemberUserName())) {
+        if(StringUtils.hasText(orderSearchDto.getMemberUserName())) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -209,7 +209,7 @@ public class OrderRepository {
         }
 
         //주문 상품명 검색
-        if(StringUtils.hasText(orderSearchDto.getSearchOrderItemName())) {
+        if(StringUtils.hasText(orderSearchDto.getItemName())) {
             if (isFirstCondition) {
                 jpql += " where";
                 isFirstCondition = false;
@@ -233,20 +233,20 @@ public class OrderRepository {
             query.setParameter("startDate", LocalDateTime.of(orderSearchDto.getStartDate(), LocalTime.of(0, 0)))
                  .setParameter("endDate", LocalDateTime.of(orderSearchDto.getEndDate(), LocalTime.of(23, 59)));
         }
-        if (orderSearchDto.getSearchOrderStatus() != null) {
-            query.setParameter("orderStatus", orderSearchDto.getSearchOrderStatus());
+        if (orderSearchDto.getOrderStatus() != null) {
+            query.setParameter("orderStatus", orderSearchDto.getOrderStatus());
         }
-        if (orderSearchDto.getSearchDeliveryStatus() != null) {
-            query.setParameter("deliveryStatus", orderSearchDto.getSearchDeliveryStatus());
+        if (orderSearchDto.getDeliveryStatus() != null) {
+            query.setParameter("deliveryStatus", orderSearchDto.getDeliveryStatus());
         }
-        if (orderSearchDto.getSearchOrderId() != null) {
-            query.setParameter("orderId", orderSearchDto.getSearchOrderId());
+        if (orderSearchDto.getOrderId() != null) {
+            query.setParameter("orderId", orderSearchDto.getOrderId());
         }
-        if (StringUtils.hasText(orderSearchDto.getSearchMemberUserName())) {
-            query.setParameter("username", "%" + orderSearchDto.getSearchMemberUserName() + "%");
+        if (StringUtils.hasText(orderSearchDto.getMemberUserName())) {
+            query.setParameter("username", "%" + orderSearchDto.getMemberUserName() + "%");
         }
-        if (StringUtils.hasText(orderSearchDto.getSearchOrderItemName())) {
-            query.setParameter("itemName", "%" +  orderSearchDto.getSearchOrderItemName() + "%");
+        if (StringUtils.hasText(orderSearchDto.getItemName())) {
+            query.setParameter("itemName", "%" +  orderSearchDto.getItemName() + "%");
         }
 
         return query;

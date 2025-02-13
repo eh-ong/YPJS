@@ -12,7 +12,7 @@ import ypjs.project.domain.Member;
 import ypjs.project.domain.Order;
 import ypjs.project.domain.enums.OrderStatus;
 import ypjs.project.domain.enums.PayStatus;
-import ypjs.project.dto.paymentdto.PaymentCallbackRequest;
+import ypjs.project.dto.paymentdto.PaymentCallbackRequestDto;
 import ypjs.project.dto.paymentdto.PaymentDto;
 import ypjs.project.dto.paymentdto.PaymentRequestDto;
 import ypjs.project.repository.OrderRepository;
@@ -162,7 +162,7 @@ public class PaymentService {
     //아임포트랑 연동, 리턴타임의 Payment 는 아임포트에서 제공하는 클래스임
     //결제 완료 후 반환 메서드
     @Transactional
-    public IamportResponse<Payment> paymentByCallback(PaymentCallbackRequest request){
+    public IamportResponse<Payment> paymentByCallback(PaymentCallbackRequestDto request){
         try {
             // 결제 단건 조회(아임포트)
             IamportResponse<Payment> iamportResponse = iamportClient.paymentByImpUid(request.getPaymentUid());
