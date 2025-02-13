@@ -11,17 +11,17 @@ import ypjs.project.domain.Item;
 public class LikedItemDto {
 
     private Long itemId;
-    private String itemName;
-    private int itemPrice;
-    private String itemFilename;
-    private String itemFilepath;
+    private String name;
+    private int price;
+    private String filename;
+    private String filepath;
 
     public LikedItemDto(Item item){
         itemId = item.getItemId();
-        itemName = item.getItemName();
-        itemPrice = item.getItemPrice();
-        itemFilename = item.getItemFilename();
-        itemFilepath = item.getItemFilepath();
+        name = item.getName();
+        price = item.getPrice();
+        filename = item.getFileName();
+        filepath = item.getFilePath();
     }
 
 }

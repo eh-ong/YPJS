@@ -20,7 +20,7 @@ public class DeliveryResponseDto {
 
     private String receiver;  //받으실 분
 
-    private String phoneNumber;  //휴대전화 번호
+    private String phone;  //휴대전화 번호
 
     private Address address;  //배송주소
 
@@ -34,7 +34,7 @@ public class DeliveryResponseDto {
         deliveryId = d.getDeliveryId();
         orderId = d.getOrder().getOrderId();
         receiver = d.getReceiver();
-        phoneNumber = d.getPhoneNumber();
+        phone = d.getPhone();
         address = d.getAddress();
         status = d.getStatus();
         carrierId = d.getCarrierId();

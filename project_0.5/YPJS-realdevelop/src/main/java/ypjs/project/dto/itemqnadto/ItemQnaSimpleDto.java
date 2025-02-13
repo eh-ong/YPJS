@@ -34,7 +34,7 @@ public class ItemQnaSimpleDto {
     public ItemQnaSimpleDto(ItemQna itemQna) {
         itemQnaId = itemQna.getItemQnaId();
         itemId = itemQna.getItem().getItemId();
-        itemName = itemQna.getItem().getItemName();
+        itemName = itemQna.getItem().getName();
         memberName = itemQna.getQMember().getName().substring(0,3) + "...";
         question = itemQna.getQ();
         qCreated = itemQna.getQCreated();

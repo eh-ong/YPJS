@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "LIKES")
+@Table(name = "likes")
 @NoArgsConstructor
 public class Like {
     @Id
@@ -15,11 +15,11 @@ public class Like {
     private Long likeId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "like_member_id")
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "like_item_id")
     private Item item;
 
 

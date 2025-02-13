@@ -10,8 +10,8 @@ import java.util.List;
 public class CategoryOneDto {
 
     private Long categoryId;
-    private Long categoryParent;
-    private String categoryName;
+    private Long parent;
+    private String name;
 
     private List<ItemListDto> items;
 
@@ -21,14 +21,14 @@ public class CategoryOneDto {
     public CategoryOneDto(Category category, List<ItemListDto> items) {
         categoryId = category.getCategoryId();
 
-        // categoryParent가 null이 아닐 때만 값을 설정
-        if (category.getCategoryParent() != null) {
-            categoryParent = category.getCategoryParent().getCategoryId();
+        // category.parent가 null이 아닐 때만 값을 설정
+        if (category.getParent() != null) {
+            parent = category.getParent().getCategoryId();
         } else {
-            categoryParent = null;
+            parent = null;
         }
 
-        categoryName = category.getCategoryName();
+        name = category.getName();
         this.items = items;
     }
 

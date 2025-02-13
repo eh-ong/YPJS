@@ -88,9 +88,9 @@ public class CategoryController {
         Category findCategory = categoryService.findOneCategory(categoryId);
 
         CategoryUpdateDto category = new CategoryUpdateDto(
-                findCategory.getCategoryId(),
-                findCategory.getCategoryParent().getCategoryId(),
-                findCategory.getCategoryName());
+                findCategory.getId(),
+                findCategory.getParent().getId(),
+                findCategory.getName());
 
         model.addAttribute("category", category);
         return "category/categoryUpdate";

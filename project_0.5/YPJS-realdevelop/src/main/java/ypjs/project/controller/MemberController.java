@@ -53,7 +53,7 @@ public class MemberController {
     private MemberDto.MypageDto getMypageData(Long memberId) {
         Member member = memberService.findOne(memberId);
         MemberDto.MypageDto result = new MemberDto.MypageDto(member.getMemberId(),member.getUsername(),member.getPassword(),member.getNickname(), member.getName(), member.getPoint(),member.getBirth(), member.getEmail(), member.getGender(), member.getAddress(),
-                member.getPhonenumber(), member.getJoinDate(), member.getRole());
+                member.getPhone(), member.getJoinDate(), member.getRole());
         return result;
     }
 

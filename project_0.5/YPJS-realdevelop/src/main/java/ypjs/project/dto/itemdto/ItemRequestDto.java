@@ -17,27 +17,27 @@ public class ItemRequestDto {
     private Long categoryId;
 
     @NotBlank(message = "ItemName not be null")
-    private String itemName;
+    private String name;
 
     @NotBlank(message = "ItemContent not be null")
-    private String itemContent;
+    private String content;
 
     @Min(value = 1, message = "ItemPrice must be at least 1 or greater.")
-    private int itemPrice;
+    private int price;
 
     @Min(value = 1, message = "ItemStock must be at least 1 or greater.")
-    private int itemStock;
+    private int stock;
 
 
 
     public ItemRequestDto() {}
 
-    public ItemRequestDto(Long categoryId, String itemName, String itemContent, int itemPrice, int itemStock) {
+    public ItemRequestDto(Long categoryId, String name, String content, int price, int stock) {
         this.categoryId = categoryId;
-        this.itemName = itemName;
-        this.itemContent = itemContent;
-        this.itemPrice = itemPrice;
-        this.itemStock = itemStock;
+        this.name = name;
+        this.content = content;
+        this.price = price;
+        this.stock = stock;
 
 
     }

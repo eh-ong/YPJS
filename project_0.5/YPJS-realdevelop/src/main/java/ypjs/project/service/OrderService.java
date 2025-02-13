@@ -35,7 +35,7 @@ public class OrderService {
         //배송정보 생성
         Delivery delivery = new Delivery(
                 orderCreateDto.getDeliveryCreateDto().getReceiver(),
-                orderCreateDto.getDeliveryCreateDto().getPhoneNumber(),
+                orderCreateDto.getDeliveryCreateDto().getPhone(),
                 orderCreateDto.getDeliveryCreateDto().getAddress(),
                 DeliveryStatus.배송준비중
         );

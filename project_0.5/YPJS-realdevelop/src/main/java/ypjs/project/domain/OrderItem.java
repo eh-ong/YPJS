@@ -14,11 +14,11 @@ public class OrderItem {
     private Long orderItemId;  //주문상품번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "order_item_item_id")
     private Item item;  //상품번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_item_order_id")
     private Order order;  //주문번호
 
     @Column(name = "order_item_count")

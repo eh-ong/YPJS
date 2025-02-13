@@ -61,7 +61,7 @@ public class OrderViewController {
         LoginDto.ResponseLogin loginMember = (LoginDto.ResponseLogin) session.getAttribute("member");
         Member m = memberService.findOne(loginMember.getMemberId());
 
-        model.addAttribute("delivery", new DeliveryCreateDto(m.getName(), m.getPhonenumber(), m.getAddress()));
+        model.addAttribute("delivery", new DeliveryCreateDto(m.getName(), m.getPhone(), m.getAddress()));
         model.addAttribute("cartList", cartListDtos);
 
         //데이터 전달 후 제거
@@ -105,7 +105,7 @@ public class OrderViewController {
         LoginDto.ResponseLogin loginMember = (LoginDto.ResponseLogin) session.getAttribute("member");
         Member m = memberService.findOne(loginMember.getMemberId());
 
-        model.addAttribute("delivery", new DeliveryCreateDto(m.getName(), m.getPhonenumber(), m.getAddress()));
+        model.addAttribute("delivery", new DeliveryCreateDto(m.getName(), m.getPhone(), m.getAddress()));
         model.addAttribute("cartList", cartListDtos);
 
         //데이터 전달 후 제거

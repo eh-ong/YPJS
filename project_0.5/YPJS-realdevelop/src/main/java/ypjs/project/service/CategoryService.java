@@ -34,11 +34,11 @@ public class CategoryService {
     //category등록
     @Transactional
     public Category saveCategory(CategoryRequestDto categoryRequestDto) {
-        Category parentCategory = categoryRepository.findOneCategory(categoryRequestDto.getCategoryParent());
+        Category parentCategory = categoryRepository.findOneCategory(categoryRequestDto.getParent());
 
         Category category = new Category(
                 parentCategory,
-                categoryRequestDto.getCategoryName()
+                categoryRequestDto.getName()
         );
 
         categoryRepository.saveCategory(category);
@@ -60,9 +60,9 @@ public class CategoryService {
 
 
 
-    //categoryParentId조회
-    public List<Category> findCategoryParent(Category categoryParent) {
-        return categoryRepository.findByParentId(categoryParent);
+    //category.parentId조회
+    public List<Category> findParent(Category parent) {
+        return categoryRepository.findByParentId(parent);
     }
 
 
@@ -93,12 +93,12 @@ public class CategoryService {
     public void updateCategory(Long categoryId, CategoryUpdateDto categoryUpdateDto) {
 
         Category category = categoryRepository.findOneCategory(categoryId);
-        Category parentCategory = categoryRepository.findOneCategory(categoryUpdateDto.getCategoryParent());
+        Category parentCategory = categoryRepository.findOneCategory(categoryUpdateDto.getParent());
 
 
         category.changeCategory(
                 parentCategory,
-                categoryUpdateDto.getCategoryName()
+                categoryUpdateDto.getName()
         );
 
     }

@@ -11,8 +11,8 @@ public class OrderItemRequestDto {
 
     private Long itemId;
 
-    private int itemCount;
+    private int count;
 
-    private int itemPrice;
+    private int price;
 
 }

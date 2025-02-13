@@ -14,7 +14,7 @@ import ypjs.project.domain.enums.OrderStatus;
 import ypjs.project.domain.enums.PayStatus;
 import ypjs.project.dto.paymentdto.PaymentCallbackRequest;
 import ypjs.project.dto.paymentdto.PaymentDto;
-import ypjs.project.dto.paymentdto.RequestPayDto;
+import ypjs.project.dto.paymentdto.PaymentRequestDto;
 import ypjs.project.repository.OrderRepository;
 import ypjs.project.repository.PaymentRepository;
 
@@ -41,10 +41,10 @@ public class PaymentService {
     public PaymentDto.SuccessPaymentDto findPaymentByPaymentUid(String paymentUid){
         ypjs.project.domain.Payment payment = paymentRepository.findPaymentByPaymentUid(paymentUid);
         //주문상태 변경
-        payment.getOrder().updateOrderStatus(OrderStatus.주문완료);
+        payment.getOrder().updateStatus(OrderStatus.주문완료);
         //결제완료 시간으로 order 업데이트
-        payment.getOrder().updateOrderCreated(payment.getPayDate());
-        return new PaymentDto.SuccessPaymentDto(payment.getOrder().getOrderId(), payment.getPayPrice(), payment.getPayDate());
+        payment.getOrder().updateCreated(payment.getDate());
+        return new PaymentDto.SuccessPaymentDto(payment.getOrder().getOrderId(), payment.getPrice(), payment.getDate());
     }
 
     //결제 단건 제거 메서드
@@ -56,20 +56,20 @@ public class PaymentService {
 
     //주문 생성
     @Transactional
-    public RequestPayDto makeRequestPayDto(Long orderId){
+    public PaymentRequestDto createPaymentRequestDto(Long orderId){
         Order order = paymentRepository.findOrderAndPaymentAndMember(orderId)
                 .orElseThrow(()->new IllegalArgumentException("주문이 없습니다."));
 
         // DTO 를 생성하여 반환
-        return new RequestPayDto(
+        return new PaymentRequestDto(
                 order.getOrderId(),
-                order.getOrderUid(), // 주문Uid
+                order.getUid(), // 주문Uid
                 order.getOrderItemsNameInfo(), // 주문상품 이름
                 order.getMember().getName(), // 주문자 이름
                 order.getPrice(), // 주문 금액
                 order.getMember().getEmail(), // 주문자 이메일
                 order.getDelivery().getAddress().getAddress()+ " " + order.getDelivery().getAddress().getAddressDetail(),// 구매자 주소
-                order.getMember().getPhonenumber(), //주문자 전화번호
+                order.getMember().getPhone(), //주문자 전화번호
                 order.getDelivery().getAddress().getZipcode(),//주문자 집코드
                 order.getMember().getPoint(), //주문자 포인트
                 order.getMember().getMemberId() //주문자 구분
@@ -85,10 +85,10 @@ public class PaymentService {
 
         //이미 주문정보가 있을 때
         if(findPayment!=null){
-            if(findPayment.getPayStatus().equals(PayStatus.OK)){
+            if(findPayment.getStatus().equals(PayStatus.OK)){
                 throw new IllegalStateException("이미 완료된 주문입니다");
             }
-            return findPayment.getPayId();
+            return findPayment.getPaymentId();
         }
 
         //주문정보 생성
@@ -98,11 +98,11 @@ public class PaymentService {
         Member member = order.getMember();
 
         //주문 정보 생성
-        ypjs.project.domain.Payment payment = ypjs.project.domain.Payment.createPayment(order, order.getPrice(), member.getName(), member.getPhonenumber(), member.getEmail());
+        ypjs.project.domain.Payment payment = ypjs.project.domain.Payment.create(order, order.getPrice(), member.getName(), member.getPhone(), member.getEmail());
 
         //주문 정보 저장
         paymentRepository.save(payment);
-        return payment.getPayId();
+        return payment.getPaymentId();
     }
 
     //payId로 payment 찾기
@@ -137,10 +137,10 @@ public class PaymentService {
 
         try {
             // 결제건 조회 후 취소
-            iamportClient.cancelPaymentByImpUid(new CancelData(payment.getPayPaymentUid(), true, new BigDecimal(payment.getPayPrice())));
+            iamportClient.cancelPaymentByImpUid(new CancelData(payment.getUid(), true, new BigDecimal(payment.getPrice())));
             payment.changePaymentStatusCanceled();
             //order status 주문 취소로 변경
-            payment.getOrder().updateOrderStatus(OrderStatus.주문취소);
+            payment.getOrder().updateStatus(OrderStatus.주문취소);
         } catch (IamportResponseException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -178,7 +178,7 @@ public class PaymentService {
             int usedPoint = request.getUsedPoint();
             System.out.println("사용한 포인트"+usedPoint);
 
-            int price = order.getPayment().getPayPrice();
+            int price = order.getPayment().getPrice();
             System.out.println("DB에 저장된 결제 금액"+price);
 
             // 실 결제 금액
@@ -197,10 +197,10 @@ public class PaymentService {
             }
 
             //결제된 금액으로 payPrice 변경
-            order.getPayment().changePayPrice(iamportPrice);
+            order.getPayment().changePrice(iamportPrice);
 
             // 결제 상태 변경
-            order.getPayment().changePaymentUidAndStatusAndPayDate(PayStatus.OK, iamportResponse.getResponse().getImpUid());
+            order.getPayment().changeUidAndStatusAndDate(PayStatus.OK, iamportResponse.getResponse().getImpUid());
 
             return iamportResponse;
 

@@ -15,16 +15,16 @@ public class NoticeDto {
     // 그래서 아예 @Data만 쓰거나 , All No 모두 추가해줘야함
     public static class CreateNoticeRequest {
         @NotBlank(message = "제목을 입력해주세요.")
-        private String noticeTitle;
+        private String title;
         @NotBlank(message = "내용을 입력해주세요.")
-        private String noticeContent;
+        private String content;
     }
 
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public static class CreateNoticeResponse {
-        private String noticeTitle;
+        private String title;
     }
 
     @Data
@@ -33,16 +33,16 @@ public class NoticeDto {
     public static class UpdateNoticeRequest {
         private Long noticeId;
         @NotBlank(message = "제목을 입력해주세요.")
-        private String noticeTitle;
+        private String title;
         @NotBlank(message = "내용을 입력해주세요.")
-        private String noticeContent;
+        private String content;
     }
 
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     public static class UpdateNoticeResponse {
-        private String noticeTitle;
+        private String title;
     }
 
     @Data
@@ -59,10 +59,10 @@ public class NoticeDto {
     @NoArgsConstructor
     public static class NoticeApiDto {
         private Long noticeId;
-        private String noticeTitle;
-        private String noticeContent;
-        private int noticeCnt;
-        private LocalDate noticeDate;
-        private String noticeWriter;
+        private String title;
+        private String content;
+        private int cnt;
+        private LocalDate date;
+        private String writer;
     }
 }

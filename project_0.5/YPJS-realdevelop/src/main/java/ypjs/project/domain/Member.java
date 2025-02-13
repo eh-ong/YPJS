@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode(of = "id")
+@Table(name = "member")
 public class Member  {
 
     @Id
@@ -58,8 +59,8 @@ public class Member  {
     @Column(name = "member_email", unique = true)
     private String email;
 
-    @Column(name = "member_phonenumber")
-    private String phonenumber;
+    @Column(name = "member_phone")
+    private String phone;
 
     @Column(name = "member_role")
     @Enumerated(EnumType.STRING)
@@ -83,7 +84,7 @@ public class Member  {
     private LocalDateTime pointDate;
 
     // 멤버 생성 메소드
-    public void createMember(String username, String password, String nickname, String name, Date birth, String gender, String address, String addressDetail, String zipcode, String email, String phonenumber) {
+    public void create(String username, String password, String nickname, String name, Date birth, String gender, String address, String addressDetail, String zipcode, String email, String phone) {
 //       BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         this.username = username;
 //        this.password = bCryptPasswordEncoder.encode(password); //(JWT 버전 쓸때 다시 살리기)
@@ -94,21 +95,21 @@ public class Member  {
         this.gender = gender;
         this.address = new Address(address,addressDetail,zipcode);
         this.email = email;
-        this.phonenumber = phonenumber;
+        this.phone = phone;
         this.joinDate = LocalDateTime.now();
         this.status = Status.MEMBER;
         this.role = Role.ROLE_ADMIN;
     }
 
     // 멤버 수정 메소드
-    public void updateMember(String password, String nickname) {
+    public void update(String password, String nickname) {
         this.password = password;
         this.nickname = nickname;
 
     }
 
     // 멤버 탈퇴 메소드
-    public void withdrawMember() {
+    public void withdraw() {
         this.outDate = LocalDateTime.now();
         this.status = Status.WITHDRAWAL;
     }

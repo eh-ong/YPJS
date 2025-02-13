@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ypjs.project.dto.logindto.LoginDto;
 import ypjs.project.dto.paymentdto.PaymentDto;
-import ypjs.project.dto.paymentdto.RequestPayDto;
+import ypjs.project.dto.paymentdto.PaymentRequestDto;
 import ypjs.project.service.PaymentService;
 
 import java.util.List;
@@ -37,8 +37,8 @@ public class PaymentController {
         PaymentDto.checkLoginMemberOrderMemberDto dto = paymentService.checkLoginMemberAndOrderMember(responseLogin.getMemberId(), orderId);
         if(dto.isCheck()){
             paymentService.createPayment(orderId);
-            RequestPayDto requestPayDto = paymentService.makeRequestPayDto(orderId);
-            model.addAttribute("requestPayDto", requestPayDto);
+            PaymentRequestDto paymentRequestDto = paymentService.createPaymentRequestDto(orderId);
+            model.addAttribute("paymentRequestDto", paymentRequestDto);
 
             return dto.getMessage();
         }

@@ -23,11 +23,11 @@ public class Order {
     private Long orderId;  //주문번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "order_member_id")
     private Member member;  //멤버번호
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = " delivery_id")
+    @JoinColumn(name = " order_delivery_id")
     private Delivery delivery;  //배송정보
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
@@ -48,7 +48,7 @@ public class Order {
     private Payment payment;
 
     @Column(name = "order_uid")
-    private String orderUid;
+    private String uid;
 
 
     //==연관관계 메서드==//
@@ -90,7 +90,7 @@ public class Order {
         order.created = LocalDateTime.now();
         order.status = OrderStatus.결제대기중;
 
-        order.orderUid = UUID.randomUUID().toString();
+        order.uid = UUID.randomUUID().toString();
 
         return order;
     }
@@ -98,12 +98,12 @@ public class Order {
 //==payment 연관 메서드==//
 
     //==상태 변경 메서드==//
-    public Long updateOrderStatus(OrderStatus orderStatus) {
+    public Long updateStatus(OrderStatus orderStatus) {
         this.status = orderStatus;
         return this.orderId;
     }
 
-    public Long updateOrderCreated(LocalDateTime payDate) {
+    public Long updateCreated(LocalDateTime payDate) {
         this.created = payDate;
         return this.orderId;
     }
@@ -116,7 +116,7 @@ public class Order {
         }
 
         OrderItem firstOrderItem = orderItems.get(0);
-        String firstItemName = firstOrderItem.getItem().getItemName();
+        String firstItemName = firstOrderItem.getItem().getName();
         int remainingItemCount = orderItems.size() - 1;
 
         return firstItemName + " 외 " + remainingItemCount + "개";

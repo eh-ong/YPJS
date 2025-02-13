@@ -13,7 +13,7 @@ public class Category {
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CATEGORY_ID")
+    @Column(name = "category_id")
     private Long categoryId;
 
     //연관관계 메서드
@@ -21,40 +21,40 @@ public class Category {
     private List<Item> items = new ArrayList<>();
 
 
-    @Column(name = "CATEGORY_NAME")
-    private String categoryName;
+    @Column(name = "category_name")
+    private String name;
 
 
     //자신을 부모타입으로 가짐
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CATEGORY_PARENT_ID")
-    private Category categoryParent;
+    @JoinColumn(name = "category_parent_id")
+    private Category parent;
 
 
     //자식은 여러개 가질 수 있음
-    @OneToMany(mappedBy = "categoryParent")
-    private List<Category> categoryChild = new ArrayList<>();
+    @OneToMany(mappedBy = "parent")
+    private List<Category> child = new ArrayList<>();
 
 
     //생성자
     public Category() {}
 
 
-    public Category (Category categoryParent, String categoryName) {
-        this.categoryParent = categoryParent;
-        this.categoryName = categoryName;
+    public Category (Category parent, String name) {
+        this.parent = parent;
+        this.name = name;
     }
 
 
     //카테고리 부모 롱타입으로
-    public void LongCategory(Category categoryParent) {
-        this.categoryParent = categoryParent;
+    public void LongCategory(Category parent) {
+        this.parent = parent;
     }
 
     //카테고리 변경 메서드
-    public Long changeCategory ( Category categoryParent, String categoryName) {
-        this.categoryParent = categoryParent;
-        this.categoryName = categoryName;
+    public Long changeCategory (Category parent, String name) {
+        this.parent = parent;
+        this.name = name;
 
         return this.categoryId;
     }
@@ -66,8 +66,8 @@ public class Category {
 
     //연관관계 메서드
     public void addChildCategory(Category child) {
-        this.categoryChild.add(child);
-        child.categoryParent = this;
+        this.child.add(child);
+        child.parent = this;
     }
 
 
@@ -76,12 +76,6 @@ public class Category {
         item.setCategory(this);
     }
 
-
-    /*
-    private void setCategoryParentId(Category category) {
-        category.CategoryParentId = this;
-    }
-     */
 
 
 }

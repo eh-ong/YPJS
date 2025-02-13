@@ -16,11 +16,11 @@ public class Cart {
     private Long cartId;  //장바구니번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "cart_member_id")
     private Member member;  //멤버번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "cart_item_id")
     private Item item;  //상품번호
 
     @Column(name = "cart_item_count")

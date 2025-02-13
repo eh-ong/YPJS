@@ -1,33 +1,32 @@
 package ypjs.project.dto.itemdto;
 
 import lombok.Data;
-import lombok.Getter;
 import ypjs.project.domain.Item;
 
 @Data
 public class ItemListDto {
 
     private Long itemId;
-    private String itemName;
-    private String itemContent;
-    private int itemPrice;
-    private int itemStock;
-    private double itemRatings;
-    private String itemFilePath;
-    private int itemCnt;
+    private String name;
+    private String content;
+    private int price;
+    private int stock;
+    private double ratings;
+    private String filePath;
+    private int cnt;
 
     public ItemListDto() {}
 
     public ItemListDto(Item item) {
 
         itemId = item.getItemId();
-        itemName = item.getItemName();
-        itemContent = item.getItemContent();
-        itemPrice = item.getItemPrice();
-        itemStock = item.getItemStock();
-        itemRatings = item.getItemRatings();
-        itemFilePath = item.getItemFilepath();
-        itemCnt = item.getItemCnt();
+        name = item.getName();
+        content = item.getContent();
+        price = item.getPrice();
+        stock = item.getStock();
+        ratings = item.getRatings();
+        filePath = item.getFilePath();
+        cnt = item.getCnt();
 
     }
 

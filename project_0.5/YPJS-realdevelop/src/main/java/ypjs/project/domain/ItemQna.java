@@ -20,11 +20,11 @@ public class ItemQna {
     private Long itemQnaId;  //상품문의번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id")
+    @JoinColumn(name = "item_qna_item_id")
     private Item item;  //상품번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "q_member_id")
+    @JoinColumn(name = "item_qna_q_member_id")
     private Member qMember;  //질문멤버번호
 
     @Column(name = "item_qna_q")
@@ -37,7 +37,7 @@ public class ItemQna {
     private LocalDateTime qUpdated;  //상품문의질문수정일시
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "a_member_id")
+    @JoinColumn(name = "item_qna_a_member_id")
     private Member aMember;  //답변멤버번호
 
     @Column(name = "item_qna_a")

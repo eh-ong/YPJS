@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Table(name = "notice")
 public class Notice {
 
     @Id
@@ -17,40 +18,40 @@ public class Notice {
     private Long noticeId;
 
     @Column(name = "notice_title")
-    private String noticeTitle;
+    private String title;
 
     @Column(name = "notice_content")
-    private String noticeContent;
+    private String content;
 
     @Column(name = "notice_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate noticeDate;
+    private LocalDate date;
 
     @Column(name = "notice_cnt")
-    private int noticeCnt;
+    private int cnt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "notice_member_id")
     private Member member;
 
 
     public void cntUp(Notice notice) {
-        notice.noticeCnt++;
+        notice.cnt++;
     }
 
 
-    public void updateNotice(String noticeTitle, String noticeContent) {
-        this.noticeTitle = noticeTitle;
-        this.noticeContent = noticeContent;
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
     // 생성 메소드
-    public static Notice createNotice(Member member, String noticeTitle, String noticeContent) {
+    public static Notice create(Member member, String title, String content) {
         Notice notice = new Notice();
         notice.member = member;
-        notice.noticeTitle = noticeTitle;
-        notice.noticeContent = noticeContent;
-        notice.noticeDate = LocalDate.now();
+        notice.title = title;
+        notice.content = content;
+        notice.date = LocalDate.now();
         return notice;
     }
 

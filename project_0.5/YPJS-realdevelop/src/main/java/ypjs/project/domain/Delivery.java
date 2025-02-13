@@ -35,8 +35,8 @@ public class Delivery {
     @Column(name = "delivery_receiver")
     private String receiver;  //받으실 분
 
-    @Column(name = "delivery_phonenumber")
-    private String phoneNumber;  //휴대전화 번호
+    @Column(name = "delivery_phone")
+    private String phone;  //휴대전화 번호
 
     @Embedded
     @Column(name = "delivery_address")
@@ -54,20 +54,20 @@ public class Delivery {
 
 
     //==생성자==//
-    public Delivery(Long deliveryId, Order order, String receiver, String phoneNumber, Address address, DeliveryStatus status, String carrierId, String trackId) {
+    public Delivery(Long deliveryId, Order order, String receiver, String phone, Address address, DeliveryStatus status, String carrierId, String trackId) {
         this.deliveryId = deliveryId;
         this.order = order;
         this.receiver = receiver;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
         this.address = address;
         this.status = status;
         this.carrierId = carrierId;
         this.trackId = trackId;
     }
 
-    public Delivery(String receiver, String phoneNumber, Address address, DeliveryStatus deliveryStatus) {
+    public Delivery(String receiver, String phone, Address address, DeliveryStatus deliveryStatus) {
         this.receiver = receiver;
-        this.phoneNumber = phoneNumber;
+        this.phone = this.phone;
         this.address = address;
         this.status = deliveryStatus;
     }

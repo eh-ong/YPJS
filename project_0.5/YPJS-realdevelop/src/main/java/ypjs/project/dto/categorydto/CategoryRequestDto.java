@@ -11,19 +11,19 @@ public class CategoryRequestDto {
 
 
 
-    @NotNull(message = "categoryParent not be null")
-    private Long categoryParent;
+    @NotNull(message = "parentId not be null")
+    private Long parentId;
 
-    @NotBlank(message = "categoryName not be null")
-    private String categoryName;
+    @NotBlank(message = "name not be null")
+    private String name;
 
 
     public CategoryRequestDto() {}
-    public CategoryRequestDto(Long categoryParent, String categoryName) {
+    public CategoryRequestDto(Long parentId, String name) {
 
 
-        this.categoryParent = categoryParent;
-        this.categoryName = categoryName;
+        this.parentId = parentId;
+        this.name = name;
     }
 
 

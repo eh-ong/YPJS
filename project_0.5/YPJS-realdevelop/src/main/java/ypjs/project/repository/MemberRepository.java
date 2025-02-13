@@ -56,13 +56,13 @@ public class MemberRepository {
                 .getResultList();
     }
 
-    public Member findId(String name, String email, String phonenumber) {
+    public Member findId(String name, String email, String phone) {
        try {
            return em.createQuery(
-                           "select m from Member m where m.email = :email and m.name = :name and m.phonenumber = :phonenumber", Member.class)
+                           "select m from Member m where m.email = :email and m.name = :name and m.phone = :phone", Member.class)
                    .setParameter("email", email)
                    .setParameter("name", name)
-                   .setParameter("phonenumber", phonenumber)
+                   .setParameter("phone", phone)
                    .getSingleResult();
        } catch (NoResultException e) {
            return null;

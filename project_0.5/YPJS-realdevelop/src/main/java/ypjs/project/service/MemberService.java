@@ -32,8 +32,8 @@ public class MemberService {
 
     private Member CreateMemberRequestToEntity(MemberDto.CreateMemberRequest request) {
         Member member = new Member();
-        member.createMember(request.getUsername(), request.getPassword(), request.getNickname(), request.getName(), request.getBirth(),
-                request.getGender(), request.getAddress(), request.getAddressDetail(), request.getZipcode(), request.getEmail(), request.getPhonenumber());
+        member.create(request.getUsername(), request.getPassword(), request.getNickname(), request.getName(), request.getBirth(),
+                request.getGender(), request.getAddress(), request.getAddressDetail(), request.getZipcode(), request.getEmail(), request.getPhone());
         return member;
     }
 
@@ -65,7 +65,7 @@ public class MemberService {
     @Transactional
     public Member update(MemberDto.UpdateMemberRequest updateMemberRequest, Long memberId) {
         Member member = memberRepository.findOne(memberId);
-        member.updateMember(updateMemberRequest.getPassword(), updateMemberRequest.getNickname());
+        member.update(updateMemberRequest.getPassword(), updateMemberRequest.getNickname());
         return member;
     }
 
@@ -73,7 +73,7 @@ public class MemberService {
     @Transactional
     public void withdraw(Long memberId) {
         Member member = memberRepository.findOne(memberId);
-        member.withdrawMember();
+        member.withdraw();
     }
 
     // 로그인
@@ -88,7 +88,7 @@ public class MemberService {
 
     // 아이디 찾기
     public String findId(MemberDto.findIdRequest request) {
-        Member member = memberRepository.findId(request.getName(), request.getEmail(), request.getPhonenumber());
+        Member member = memberRepository.findId(request.getName(), request.getEmail(), request.getPhone());
         return member.getUsername();
     }
 

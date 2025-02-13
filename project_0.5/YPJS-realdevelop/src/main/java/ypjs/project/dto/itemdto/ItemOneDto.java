@@ -1,9 +1,7 @@
 package ypjs.project.dto.itemdto;
 
 import lombok.Data;
-import lombok.Getter;
 import ypjs.project.domain.Item;
-import ypjs.project.domain.ItemReview;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,29 +11,29 @@ import java.util.stream.Collectors;
 public class ItemOneDto {
 
     private Long itemId;
-    private String itemName;
-    private String itemContent;
-    private int itemPrice;
-    private double itemRatings;
-    private LocalDateTime itemCreateDate;
-    private int itemCnt;
-    private String itemFilePath;
+    private String name;
+    private String content;
+    private int price;
+    private double ratings;
+    private LocalDateTime createDate;
+    private int cnt;
+    private String filePath;
 
-    private List<ItemReviewListDto> itemReviews;
+    private List<ItemReviewListDto> reviews;
 
     
     public ItemOneDto(Item item) {
         this.itemId = item.getItemId();
-        this.itemName = item.getItemName();
-        this.itemContent = item.getItemContent();
-        this.itemPrice = item.getItemPrice();
-        this.itemRatings = item.getItemRatings();
-        this.itemCreateDate = item.getItemCreateDate();
-        this.itemCnt = item.getItemCnt();
-        itemFilePath = item.getItemFilepath();
+        this.name = item.getName();
+        this.content = item.getContent();
+        this.price = item.getPrice();
+        this.ratings = item.getRatings();
+        this.createDate = item.getCreateDate();
+        this.cnt = item.getCnt();
+        filePath = item.getFilePath();
 
 
-        this.itemReviews = item.getItemReviews().stream()
+        this.reviews = item.getReviews().stream()
                 .map(ItemReviewListDto::new)
                 .collect(Collectors.toList());
     }

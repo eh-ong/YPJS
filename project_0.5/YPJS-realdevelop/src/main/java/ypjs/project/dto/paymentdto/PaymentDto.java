@@ -13,8 +13,8 @@ public class PaymentDto {
     @AllArgsConstructor
     public static class SuccessPaymentDto {
         private Long orderId;
-        private int payPrice;
-        private LocalDateTime payDate;
+        private int price;
+        private LocalDateTime date;
     }
 
     @Data
@@ -29,15 +29,15 @@ public class PaymentDto {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class PaymentForOrderDetailDto {
-        private Long payId; //환불 로직 용
-        private int payPrice; //포인트를 제외한 실 결제 금액
-        private PayStatus payStatus; //현재 결제 내역 상태
+        private Long paymentId; //환불 로직 용
+        private int price; //포인트를 제외한 실 결제 금액
+        private PayStatus status; //현재 결제 내역 상태
 
 
         public PaymentForOrderDetailDto(Payment payment){
-            this.payId = payment.getPayId();
-            this.payPrice = payment.getPayPrice();
-            this.payStatus = payment.getPayStatus();
+            this.paymentId = payment.getPaymentId();
+            this.price = payment.getPrice();
+            this.status = payment.getStatus();
         }
     }
 

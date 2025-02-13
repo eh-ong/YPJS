@@ -11,26 +11,26 @@ import java.util.List;
 public class ItemResponseDto {
     private Long categoryId;
     private Long itemId;
-    private String itemName;
-    private String itemContent;
-    private int itemPrice;
-    private int itemStock;
-    private LocalDateTime itemCreateDate;
+    private String name;
+    private String content;
+    private int price;
+    private int stock;
+    private LocalDateTime createDate;
 
 
     public ItemResponseDto() {}
 
-    public ItemResponseDto(Long categoryId, Long itemId, String itemName, String itemContent, int itemPrice, int itemStock,
-                           LocalDateTime itemCreateDate
+    public ItemResponseDto(Long categoryId, Long itemId, String name, String content, int price, int stock,
+                           LocalDateTime createDate
                            ) {
 
         this.categoryId = categoryId;
         this.itemId = itemId;
-        this.itemName = itemName;
-        this.itemContent = itemContent;
-        this.itemPrice = itemPrice;
-        this.itemStock = itemStock;
-        this.itemCreateDate = itemCreateDate;
+        this.name = name;
+        this.content = content;
+        this.price = price;
+        this.stock = stock;
+        this.createDate = createDate;
 
     }
 

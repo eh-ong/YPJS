@@ -156,8 +156,8 @@ public class ItemReviewController {
                 findItemReview.getItem().getItemId(),
                 findItemReview.getItemReviewId(),
                 findItemReview.getItemScore(),
-                findItemReview.getItemReviewName(),
-                findItemReview.getItemReviewContent()
+                findItemReview.getName(),
+                findItemReview.getContent()
 
         );
 

@@ -44,7 +44,7 @@ public class NoticeService {
     public Notice insertNotice(HttpSession session, NoticeDto.CreateNoticeRequest request) {
         LoginDto.ResponseLogin responseLogin = (LoginDto.ResponseLogin) session.getAttribute("member");
         Member member = memberRepository.findOne(responseLogin.getMemberId());
-        Notice notice = Notice.createNotice(member, request.getNoticeTitle(), request.getNoticeContent());
+        Notice notice = Notice.create(member, request.getNoticeTitle(), request.getNoticeContent());
         noticeRepository.save(notice);
         return notice;
     }
@@ -52,7 +52,7 @@ public class NoticeService {
     @Transactional
     public Notice updateNotice(NoticeDto.UpdateNoticeRequest request, Long noticeId) {
         Notice notice = noticeRepository.findOne(noticeId);
-        notice.updateNotice(request.getNoticeTitle(), request.getNoticeContent());
+        notice.update(request.getNoticeTitle(), request.getNoticeContent());
         return notice;
     }
 

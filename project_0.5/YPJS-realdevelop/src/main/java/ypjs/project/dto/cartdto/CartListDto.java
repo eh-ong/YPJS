@@ -27,10 +27,10 @@ public class CartListDto {
     public CartListDto(Cart cart) {
         cartId = cart.getCartId();
         itemId = cart.getItem().getItemId();
-        itemName = cart.getItem().getItemName();
-        itemContent = cart.getItem().getItemContent();
-        itemPrice = cart.getItem().getItemPrice();
-        itemFilepath = cart.getItem().getItemFilepath();
+        itemName = cart.getItem().getName();
+        itemContent = cart.getItem().getContent();
+        itemPrice = cart.getItem().getPrice();
+        itemFilepath = cart.getItem().getFilePath();
         itemCount = cart.getItemCount();
     }
 }

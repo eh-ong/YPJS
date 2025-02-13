@@ -13,8 +13,8 @@ public class CategoryListDto {
 
 
     private Long categoryId;
-    private Long categoryParent;
-    private String categoryName;
+    private Long parentId;
+    private String name;
 
     private List<ItemDto> items;
 
@@ -25,14 +25,14 @@ public class CategoryListDto {
 
         categoryId = category.getCategoryId();
 
-        // categoryParent가 null이 아닐 때만 값을 설정
-        if (category.getCategoryParent() != null) {
-            categoryParent = category.getCategoryParent().getCategoryId();
+        // category.parent가 null이 아닐 때만 값을 설정
+        if (category.getParent() != null) {
+            parentId = category.getParent().getCategoryId();
         } else {
-            categoryParent = null;
+            parentId = null;
         }
 
-        categoryName = category.getCategoryName();
+        name = category.getName();
 
         items = category.getItems().stream()
                 .map(item -> new ItemDto(item))
@@ -53,10 +53,10 @@ public class CategoryListDto {
         private int itemStoock;
 
         public ItemDto(Item item) {
-            itemName = item.getItemName();
-            itemContent = item.getItemContent();
-            itemPrice = item.getItemPrice();
-            itemStoock = item.getItemStock();
+            itemName = item.getName();
+            itemContent = item.getContent();
+            itemPrice = item.getPrice();
+            itemStoock = item.getStock();
         }
     }
 

@@ -56,12 +56,12 @@ public class ItemService {
                 itemRequestDto.getItemStock());
 
         // ItemFileDto에 파일 정보 설정 (필드에 직접 접근하는 방법)
-        itemFileDto.itemFileName = fileName;
-        itemFileDto.itemFilePath = "/files/" + fileName;
+        itemFileDto.fileName = fileName;
+        itemFileDto.filePath = "/files/" + fileName;
 
         //// Item에 파일 정보 추가
         item.addfile(
-                itemFileDto.getItemFileName(), itemFileDto.getItemFilePath()
+                itemFileDto.getFileName(), itemFileDto.getFilePath()
         );
 
         itemRepository.saveItem(item);
@@ -98,18 +98,18 @@ public class ItemService {
 
 
             // ItemFileDto에 파일 정보 설정 (필드에 직접 접근하는 방법)
-            itemFileDto.itemFileName = fileName;
-            itemFileDto.itemFilePath = "/files/" + fileName;
+            itemFileDto.fileName = fileName;
+            itemFileDto.filePath = "/files/" + fileName;
 
             //// Item에 파일 정보 추가
             findItem.addfile(
-                    itemFileDto.getItemFileName(), itemFileDto.getItemFilePath()
+                    itemFileDto.getFileName(), itemFileDto.getFilePath()
             );
         }
 
 
 
-        findItem.changeItem(category,
+        findItem.change(category,
                 itemUpdateDto.getItemName(),
                 itemUpdateDto.getItemContent(),
                 itemUpdateDto.getItemPrice(),

@@ -49,7 +49,7 @@ public class MemberDto {
         private String email;
 
         @NotBlank(message = "핸드폰번호를 입력해주세요.")
-        private String phonenumber;
+        private String phone;
 
     }
 
@@ -97,7 +97,7 @@ public class MemberDto {
         private String gender;
         private String email;
         private Address address;
-        private String phonenumber;
+        private String phone;
         private LocalDateTime joinDate;
         private Role role;
     }
@@ -108,7 +108,7 @@ public class MemberDto {
     public static class findIdRequest {
         private String name;
         private String email;
-        private String phonenumber;
+        private String phone;
     }
 
     @Data

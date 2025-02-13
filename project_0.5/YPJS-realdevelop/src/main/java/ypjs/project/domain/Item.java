@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "item")
 @Getter
 @EntityListeners(AuditingEntityListener.class)
 public class Item {
@@ -17,15 +18,15 @@ public class Item {
 
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ITEM_ID")
+    @Column(name = "item_id")
     private Long itemId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CATEGORY_ID")
+    @JoinColumn(name = "item_category_id")
     private Category category;
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
-    private List<ItemReview> itemReviews = new ArrayList<>();
+    private List<ItemReview> reviews = new ArrayList<>();
 
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = false)
@@ -36,46 +37,46 @@ public class Item {
 
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
+    @JoinColumn(name = "item_member_id")
     private Member member;
 
 
-    @Column(name = "ITEM_NAME")
-    private String itemName;
+    @Column(name = "item_name")
+    private String name;
 
     @Lob
-    @Column(name = "ITEM_CONTENT", columnDefinition = "LONGTEXT")
-    private String itemContent;
+    @Column(name = "item_content", columnDefinition = "LONGTEXT")
+    private String content;
 
-    @Column(name = "ITEM_PRICE")
-    private int itemPrice;
+    @Column(name = "item_price")
+    private int price;
 
-    @Column(name = "ITEM_STOCK")
-    private int itemStock;
+    @Column(name = "item_stock")
+    private int stock;
 
-    @Column(name = "ITEM_FILENAME")
-    private String itemFilename;
+    @Column(name = "item_file_name")
+    private String fileName;
 
-    @Column(name = "ITEM_FILEPATH")
-    private String itemFilepath;
+    @Column(name = "item_file_path")
+    private String filePath;
 
-    @Column(name = "ITEM_CREATEDATE")
+    @Column(name = "item_create_date")
     @CreatedDate
-    private LocalDateTime itemCreateDate;
+    private LocalDateTime createDate;
 
 
-    @Column(name = "ITEM_CNT")
-    private int itemCnt = 0;
+    @Column(name = "item_cnt")
+    private int cnt = 0;
 
-    @Column(name = "ITEM_RATINGS")
-    private Double itemRatings = 0.0;
+    @Column(name = "item_ratings")
+    private Double ratings = 0.0;
 
-    @Column(name = "LIKE_COUNT")
+    @Column(name = "item_like_count")
     private int likeCount = 0;
 
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
-    private List<ItemQna> itemQnas = new ArrayList<>();
+    private List<ItemQna> qnas = new ArrayList<>();
 
 
 
@@ -83,25 +84,25 @@ public class Item {
 
     public Item() {}
 
-    public Item(Category category, Member member, String itemName, String itemContent, int itemPrice, int itemStock) {
+    public Item(Category category, Member member, String name, String content, int price, int stock) {
         this.category = category;
         this.member = member;
-        this.itemName = itemName;
-        this.itemContent = itemContent;
-        this.itemPrice = itemPrice;
-        this.itemStock = itemStock;
-        this.itemCreateDate = LocalDateTime.now();
+        this.name = name;
+        this.content = content;
+        this.price = price;
+        this.stock = stock;
+        this.createDate = LocalDateTime.now();
 
     }
 
 
     //상품변경메서드
-    public Long changeItem(Category category, String itemName, String itemContent, int itemPrice, int itemStock) {
+    public Long change(Category category, String name, String content, int price, int stock) {
         this.category = category;
-        this.itemName = itemName;
-        this.itemContent = itemContent;
-        this.itemPrice = itemPrice;
-        this.itemStock = itemStock;
+        this.name = name;
+        this.content = content;
+        this.price = price;
+        this.stock = stock;
 
 
         return this.itemId;
@@ -109,9 +110,9 @@ public class Item {
 
 
     //파일추가 메서드
-    public void addfile(String itemFilename, String itemFilepath) {
-        this.itemFilename = itemFilename;
-        this.itemFilepath = itemFilepath;
+    public void addfile(String fileName, String filePath) {
+        this.fileName = fileName;
+        this.filePath = filePath;
 
     }
 
@@ -121,26 +122,26 @@ public class Item {
     //평점계산
     public void updateItemRatings() {
 
-        if (itemReviews == null || itemReviews.isEmpty()) {
-            this.itemRatings = 0.0;
+        if (reviews == null || reviews.isEmpty()) {
+            this.ratings = 0.0;
         }
 
         double totalScore = 0;
         int count = 0; // 평가된 리뷰의 개수를 세기 위한 변수
-        for (ItemReview review : itemReviews) {
-            if (review.getItemScore() != 0) {
+        for (ItemReview itemReview : reviews) {
+            if (itemReview.getScore() != 0) {
                 //double score = Math.min(Math.max(review.getItemScore(), 1.0), 5.0);
                 //totalScore += score;
-                totalScore += review.getItemScore();
+                totalScore += itemReview.getScore();
                 count++;
             }
         }
         if (count > 0) {
             double averageScore = totalScore / count;
             // 소숫점 첫째자리까지 반환
-            this.itemRatings = Math.round(averageScore * 10.0) / 10.0; //소숫점 첫째자리까지 반환
+            this.ratings = Math.round(averageScore * 10.0) / 10.0; //소숫점 첫째자리까지 반환
         } else {
-            this.itemRatings = 0.0;
+            this.ratings = 0.0;
         }
 
     }
@@ -156,24 +157,24 @@ public class Item {
 
 
     public void addItemReview(ItemReview itemReview) {
-        itemReviews.add(itemReview);
+        reviews.add(itemReview);
         itemReview.setItem(this);
     }
 
     public void removeItemReview(ItemReview itemReview) {
-        itemReviews.remove(itemReview);
+        reviews.remove(itemReview);
     }
 
 
 
     //==재고 제거 메서드==//
     public void removeStock(int count) {
-        this.itemStock -= count;
+        this.stock -= count;
     }
 
     //==재고 추가 메서드==//
     public void addStock(int count) {
-        this.itemStock += count;
+        this.stock += count;
     }
 
 

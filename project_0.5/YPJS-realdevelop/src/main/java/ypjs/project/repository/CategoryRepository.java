@@ -45,10 +45,10 @@ public class CategoryRepository {
 //    }
 
 
-    //CategoryParentId통해서 조회
-    public List<Category> findByParentId(Category categoryParent) {
-        return em.createQuery("select c from Category c where c.categoryParent = :categoryParent", Category.class)
-                .setParameter("categoryParent", categoryParent)
+    //category.parent.id통해서 조회
+    public List<Category> findByParentId(Category parent) {
+        return em.createQuery("select c from Category c where c.parent = :parent", Category.class)
+                .setParameter("parent", parent)
                 .getResultList();
     }
 
@@ -64,7 +64,7 @@ public class CategoryRepository {
     //category전체 조회
     public List<Category> findAll() {
         return em.createQuery(
-                        "select distinct c from Category c join fetch categoryParent", Category.class)
+                        "select distinct c from Category c join fetch parent", Category.class)
                 .getResultList();
     }
 
@@ -72,7 +72,7 @@ public class CategoryRepository {
 
     //카테고리 부모가 null일 때 카테고리 보이게
     public List<Category> findParentCategories() {
-        return em.createQuery("select c from Category c where c.categoryParent is null", Category.class)
+        return em.createQuery("select c from Category c where c.parent is null", Category.class)
                 .getResultList();
     }
 

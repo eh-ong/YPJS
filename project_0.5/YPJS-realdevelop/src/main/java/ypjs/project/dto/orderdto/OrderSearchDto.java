@@ -12,11 +12,11 @@ import java.time.LocalDate;
 public class OrderSearchDto {
     private LocalDate startDate;
     private LocalDate endDate;
-    private OrderStatus searchOrderStatus;
-    private DeliveryStatus searchDeliveryStatus;
-    private Long searchOrderId;
-    private String searchMemberUserName;
-    private String searchOrderItemName;
+    private OrderStatus orderStatus;
+    private DeliveryStatus deliveryStatus;
+    private Long orderId;
+    private String memberUserName;
+    private String itemName;
 
 
 }

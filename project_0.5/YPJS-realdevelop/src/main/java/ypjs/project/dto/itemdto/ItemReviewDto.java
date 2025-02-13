@@ -16,24 +16,24 @@ public class ItemReviewDto {
     private Long itemReviewId;
 
     @Min(value = 1, message = "itemScore must be at least 1 or greater.")
-    private int itemScore;
+    private int score;
 
     @NotBlank(message = "itemReviewName not be null")
-    private String itemReviewName;
+    private String title;
 
     @NotBlank(message = "itemReviewContent not be null")
-    private String itemReviewContent;
+    private String content;
 
 
     public ItemReviewDto() {}
 
 
-    public ItemReviewDto(Long itemId, Long itemReviewId,int itemScore, String itemReviewName, String itemReviewContent) {
+    public ItemReviewDto(Long itemId, Long itemReviewId,int score, String title, String content) {
         this.itemId = itemId;
         this.itemReviewId = itemReviewId;
-        this.itemScore = itemScore;
-        this.itemReviewName = itemReviewName;
-        this.itemReviewContent = itemReviewContent;
+        this.score = score;
+        this.title = title;
+        this.content = content;
     }
 
 

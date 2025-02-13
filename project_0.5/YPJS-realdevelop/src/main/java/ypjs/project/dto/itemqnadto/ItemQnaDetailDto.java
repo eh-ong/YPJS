@@ -40,7 +40,7 @@ public class ItemQnaDetailDto {
     public ItemQnaDetailDto(ItemQna itemQna) {
         itemQnaId = itemQna.getItemQnaId();
         itemId = itemQna.getItem().getItemId();
-        itemName = itemQna.getItem().getItemName();
+        itemName = itemQna.getItem().getName();
         qMemberUserName = itemQna.getQMember().getUsername();
         question = itemQna.getQ();
         qCreated = itemQna.getQCreated();

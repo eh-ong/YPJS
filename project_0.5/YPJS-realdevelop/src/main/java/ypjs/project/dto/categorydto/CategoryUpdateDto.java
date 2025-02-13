@@ -11,17 +11,17 @@ public class CategoryUpdateDto {
 
     private Long categoryId;
 
-    @NotNull(message = "categoryParent not be null")
-    private Long categoryParent;
+    @NotNull(message = "parent not be null")
+    private Long parent;
 
-    @NotBlank(message = "categoryName not be null")
-    private String categoryName;
+    @NotBlank(message = "name not be null")
+    private String name;
 
     public CategoryUpdateDto() {}
 
-    public CategoryUpdateDto(Long categoryId, Long categoryParent, String categoryName) {
+    public CategoryUpdateDto(Long categoryId, Long parent, String name) {
         this.categoryId = categoryId;
-        this.categoryParent = categoryParent;
-        this.categoryName = categoryName;
+        this.parent = parent;
+        this.name = name;
     }
 }

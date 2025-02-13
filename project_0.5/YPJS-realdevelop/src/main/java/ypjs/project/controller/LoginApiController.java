@@ -32,13 +32,9 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class LoginApiController {
+
     private final MemberService memberService;
-
-
-
     private final CartService cartService;
-  
-
 
     // 세션버전 로그인
     @PostMapping("/api/ypjs/member/login")

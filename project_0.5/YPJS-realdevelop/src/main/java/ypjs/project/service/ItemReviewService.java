@@ -36,16 +36,16 @@ public class ItemReviewService {
         ItemReview itemReview = new ItemReview(
                 item,
                 member,
-                itemReviewDto.getItemScore(),
-                itemReviewDto.getItemReviewName(),
-                itemReviewDto.getItemReviewContent()
+                itemReviewDto.getScore(),
+                itemReviewDto.getTitle(),
+                itemReviewDto.getContent()
         );
 
         //리뷰 저장
         itemReviewRepository.saveReview(itemReview);
 
         // 새로운 리뷰가 추가된 후 아이템의 리뷰 리스트를 업데이트
-        item.getItemReviews().add(itemReview);
+        item.getReviews().add(itemReview);
 
         //평점 업데이트
         item.updateItemRatings();
@@ -105,10 +105,10 @@ public class ItemReviewService {
             throw new IllegalArgumentException("ItemReview not found with id: " + itemReviewId);
         }
 
-        Long iRId = itemReview.changeItemReview(
-                itemReviewDto.getItemScore(),
-                itemReviewDto.getItemReviewName(),
-                itemReviewDto.getItemReviewContent()
+        Long iRId = itemReview.change(
+                itemReviewDto.getScore(),
+                itemReviewDto.getTitle(),
+                itemReviewDto.getContent()
         );
 
 
