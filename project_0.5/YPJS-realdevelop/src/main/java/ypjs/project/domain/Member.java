@@ -54,6 +54,11 @@ public class Member  {
     private String gender;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "address", column = @Column(name = "member_address_address")),
+            @AttributeOverride(name = "addressDetail", column = @Column(name = "member_address_address_detail")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "member_address_zipcode"))
+    })
     private Address address;
 
     @Column(name = "member_email", unique = true)

@@ -11,11 +11,10 @@ import lombok.Setter;
 @Data
 public class Address {
 
-    @Column(name = "member_address")
     private String address;
-    @Column(name = "member_address_detail")
+
     private String addressDetail;
-    @Column(name = "member_zipcode")
+
     private String zipcode;
 
     public Address() {

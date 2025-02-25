@@ -24,7 +24,7 @@ public class Cart {
     private Item item;  //상품번호
 
     @Column(name = "cart_item_count")
-    private Integer itemCount;  //상품수량
+    private int itemCount;  //상품수량
 
     public Cart(Member member, Item item, int itemCount) {
         this.member = member;

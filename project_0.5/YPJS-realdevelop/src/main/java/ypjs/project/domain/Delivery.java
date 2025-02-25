@@ -39,7 +39,11 @@ public class Delivery {
     private String phone;  //휴대전화 번호
 
     @Embedded
-    @Column(name = "delivery_address")
+    @AttributeOverrides({
+            @AttributeOverride(name = "address", column = @Column(name = "delivery_address_address")),
+            @AttributeOverride(name = "addressDetail", column = @Column(name = "delivery_address_address_detail")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "delivery_address_zipcode"))
+    })
     private Address address;  //배송주소
 
     @Enumerated(EnumType.STRING)

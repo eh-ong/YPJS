@@ -21,19 +21,26 @@ public class Payment {
     private Order order;
 
     //실결제금액
+    @Column(name = "payment_price")
     private int price;
 
+    @Column(name = "payment_name")
     private String name;
 
+    @Column(name = "payment_phone")
     private String phone;
 
+    @Column(name = "payment_email")
     private String email;
 
+    @Column(name = "payment_date")
     private LocalDateTime date; //결제 완료 날짜
 
+    @Column(name = "payment_status")
     @Enumerated(EnumType.STRING)
     private PayStatus status; //OK, READY, CANCEL
 
+    @Column(name = "payment_uid")
     private String uid; //결제 고유 번호
 
     //==생성 메서드==//

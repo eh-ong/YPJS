@@ -68,7 +68,7 @@ public class Item {
     @Column(name = "item_cnt")
     private int cnt = 0;
 
-    @Column(name = "item_ratings")
+    @Column(name = "item_ratings", columnDefinition = "DOUBLE")
     private Double ratings = 0.0;
 
     @Column(name = "item_like_count")
